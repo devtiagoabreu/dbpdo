@@ -21,7 +21,7 @@ var_dump(
     $stmt,
     $stmt->rowCount(),     // número de linhas
     $stmt->columnCount(),  // número de colunas
-    $stmt->fetch(),         // retorno da query fetch retorna a primeira tupla 
+    $stmt->fetch(),        // retorno da query fetch retorna a primeira tupla 
     $stmt->fetchAll()      // retorno da query completa
 );
 

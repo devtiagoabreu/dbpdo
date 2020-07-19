@@ -1,5 +1,5 @@
 <?php
-
+//REGRA DE NEGÓCIO REFERENTE SOMENTE AO USUÁRIO
 namespace Source\Models;
 
 /**

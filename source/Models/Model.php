@@ -1,5 +1,5 @@
 <?php
-
+//COMUM PARA TODAS AS REGRAS DE NEGÓCIO
 namespace Source\Models;
 
 use Source\Database\Connect;
@@ -11,13 +11,13 @@ use Source\Database\Connect;
 abstract class Model
 {
     /** @var object|null */
-    protected $data;
+    protected $data; //TODOS OS DADOS MANIPULADOS DA CLASSE
 
     /** @var \PDOException|null */
-    protected $fail;
+    protected $fail; //TODOS OS ERROS MANIPULADOS DA CLASSE
 
     /** @var string|null */
-    protected $message;
+    protected $message; //ARMAZENA MENSAGENS PARA PARA O USUÁRIO
 
     /**
      * @param $name
@@ -53,7 +53,7 @@ abstract class Model
     /**
      * @return null|object
      */
-    public function data(): ?object
+    public function data(): ?object //
     {
         return $this->data;
     }
@@ -168,7 +168,7 @@ abstract class Model
     /**
      * @return array|null
      */
-    protected function safe(): ?array
+    protected function safe(): ?array //LIMPA OS DADOS QUE NÃO DEVEM IR PARA O BANCO
     {
         $safe = (array)$this->data;
         foreach (static::$safe as $unset) {
@@ -181,7 +181,7 @@ abstract class Model
      * @param array $data
      * @return array|null
      */
-    private function filter(array $data): ?array
+    private function filter(array $data): ?array //FILTRA OS DADOS ANTES DE SEREM INSERIDOS NO BANCO DE DADOS
     {
         $filter = [];
         foreach ($data as $key => $value) {
